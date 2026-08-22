@@ -1,6 +1,8 @@
 {
   "item.phancyan.idea": "idea",
-  "item.phancyan.lunatic": "lunatic",
+  "item.phancyan.lunacy": "lunacy",
   "item.phancyan.empty_ingot": "Empty Ingot",
+  "item.phancyan.door_stick": "Door Stick",
+  "item.phancyan.disposable_torch": "Disposable Torch",
   "creativetab.phancyan_tab": "Phancyan"
 }

@@ -1,6 +1,7 @@
 package io.github.ticketc1aw.phancyan;
 
 import com.mojang.logging.LogUtils;
+import io.github.ticketc1aw.phancyan.common.effect.ModEffects;
 import io.github.ticketc1aw.phancyan.common.item.ModCreativeModTabs;
 import io.github.ticketc1aw.phancyan.common.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -43,8 +44,8 @@ public class Phancyan {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModCreativeModTabs.register(modEventBus);
-
         ModItems.register(modEventBus);
+        ModEffects.EFFECTS.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

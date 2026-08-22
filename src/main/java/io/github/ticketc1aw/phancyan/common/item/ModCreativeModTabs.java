@@ -7,7 +7,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModCreativeModTabs {
@@ -19,9 +18,10 @@ public class ModCreativeModTabs {
             .title(Component.translatable("creativetab.phancyan_tab"))
             .displayItems((itemDisplayParameters, output) -> {
                 output.accept(ModItems.IDEA.get());
-                output.accept(ModItems.LUNATIC.get());
+                output.accept(ModItems.LUNACY.get());
                 output.accept(ModItems.EMPTY_INGOT.get());
-
+                output.accept(ModItems.DOOR_STICK.get());
+                output.accept(ModItems.DISPOSABLE_TORCH.get());
             })
             .build());
 
