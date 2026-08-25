@@ -14,11 +14,11 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Phancyan.MOD_ID);
 
     public static final RegistryObject<Item> IDEA = ITEMS.register("idea",
-            () -> new Item(new Item.Properties()));
+            () -> new PhancyanItem(new Item.Properties(),1));
     public static final RegistryObject<Item> LUNACY = ITEMS.register("lunacy",
-            () -> new Item(new Item.Properties()));
+            () -> new PhancyanItem(new Item.Properties(),2));
     public static final RegistryObject<Item> EMPTY_INGOT = ITEMS.register("empty_ingot",
-            () -> new Item(new Item.Properties()));
+            () -> new PhancyanItem(new Item.Properties(),3));
     public static final RegistryObject<Item> DOOR_STICK = ITEMS.register("door_stick",
             () -> new DoorStickItem(new Item.Properties()));
     public static final RegistryObject<Item> DISPOSABLE_TORCH = ITEMS.register("disposable_torch",

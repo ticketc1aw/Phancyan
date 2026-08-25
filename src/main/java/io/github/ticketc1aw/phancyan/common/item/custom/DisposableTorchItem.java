@@ -1,5 +1,6 @@
 package io.github.ticketc1aw.phancyan.common.item.custom;
 
+import io.github.ticketc1aw.phancyan.common.item.IPhancyanItem;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -11,9 +12,14 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-public class DisposableTorchItem extends FlintAndSteelItem {
+public class DisposableTorchItem extends FlintAndSteelItem implements IPhancyanItem {
     public DisposableTorchItem(Item.Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public int getPhase() {
+        return 1;
     }
 
     @Override

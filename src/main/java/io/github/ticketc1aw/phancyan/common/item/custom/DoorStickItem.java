@@ -1,5 +1,6 @@
 package io.github.ticketc1aw.phancyan.common.item.custom;
 
+import io.github.ticketc1aw.phancyan.common.item.IPhancyanItem;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
@@ -14,9 +15,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoorStickItem extends Item {
+public class DoorStickItem extends Item implements IPhancyanItem {
     public DoorStickItem(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public int getPhase() {
+        return 1;
     }
 
     @Override
