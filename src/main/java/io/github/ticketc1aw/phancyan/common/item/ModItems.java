@@ -3,6 +3,7 @@ package io.github.ticketc1aw.phancyan.common.item;
 import io.github.ticketc1aw.phancyan.Phancyan;
 import io.github.ticketc1aw.phancyan.common.item.custom.DisposableTorchItem;
 import io.github.ticketc1aw.phancyan.common.item.custom.DoorStickItem;
+import io.github.ticketc1aw.phancyan.common.item.custom.LunacyItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,7 +17,7 @@ public class ModItems {
     public static final RegistryObject<Item> IDEA = ITEMS.register("idea",
             () -> new PhancyanItem(new Item.Properties(),1));
     public static final RegistryObject<Item> LUNACY = ITEMS.register("lunacy",
-            () -> new PhancyanItem(new Item.Properties(),2));
+            () -> new LunacyItem(new Item.Properties()));
     public static final RegistryObject<Item> EMPTY_INGOT = ITEMS.register("empty_ingot",
             () -> new PhancyanItem(new Item.Properties(),3));
     public static final RegistryObject<Item> DOOR_STICK = ITEMS.register("door_stick",
