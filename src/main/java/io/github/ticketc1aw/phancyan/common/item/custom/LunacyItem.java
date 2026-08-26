@@ -1,5 +1,6 @@
 package io.github.ticketc1aw.phancyan.common.item.custom;
 
+import io.github.ticketc1aw.phancyan.common.block.ModBlocks;
 import io.github.ticketc1aw.phancyan.common.item.IPhancyanItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -11,8 +12,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
@@ -32,10 +31,10 @@ public class LunacyItem extends Item implements IPhancyanItem {
         BlockPos pos = pContext.getClickedPos();
         BlockState state = level.getBlockState(pos);
 
-        if (state.is(BlockTags.FLOWERS) && !state.is(Blocks.WITHER_ROSE)) {
+        if (state.is(BlockTags.FLOWERS) && !state.is(ModBlocks.LUNACY_FLOWER.get())) {
             if (!level.isClientSide) {
                 pContext.getItemInHand().shrink(1);
-                level.setBlock(pos, Blocks.WITHER_ROSE.defaultBlockState(), 3);
+                level.setBlock(pos, ModBlocks.LUNACY_FLOWER.get().defaultBlockState(), 3);
                 level.playSound(null, pos, SoundEvents.SCULK_SHRIEKER_SHRIEK, SoundSource.BLOCKS, 1.0F, 1.0F);
                 ServerLevel serverLevel = (ServerLevel) level;
                 serverLevel.sendParticles(ParticleTypes.SCULK_SOUL, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 1, 3, 0.5, 0.5, 0.5, 0.02);

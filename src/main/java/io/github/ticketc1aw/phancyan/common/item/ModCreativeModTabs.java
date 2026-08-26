@@ -1,6 +1,7 @@
 package io.github.ticketc1aw.phancyan.common.item;
 
 import io.github.ticketc1aw.phancyan.Phancyan;
+import io.github.ticketc1aw.phancyan.common.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -22,6 +23,8 @@ public class ModCreativeModTabs {
                 output.accept(ModItems.EMPTY_INGOT.get());
                 output.accept(ModItems.DOOR_STICK.get());
                 output.accept(ModItems.DISPOSABLE_TORCH.get());
+
+                output.accept(ModBlocks.LUNACY_FLOWER.get());
             })
             .build());
 
