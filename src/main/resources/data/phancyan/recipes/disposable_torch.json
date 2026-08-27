@@ -1,13 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     {
       "item": "phancyan:idea"
     },
     {
-      "item": "minecraft:torch",
-      "count": 8
+      "item": "minecraft:torch"
     }
   ],
   "result": {

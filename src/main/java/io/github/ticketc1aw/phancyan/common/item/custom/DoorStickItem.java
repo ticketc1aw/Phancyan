@@ -28,12 +28,12 @@ public class DoorStickItem extends Item implements IPhancyanItem {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
         if (!pLevel.isClientSide()) {
-            pPlayer.getCooldowns().addCooldown(this, 20);
             for (ItemStack stack : getInventory(pPlayer)) {
                 if (stack.is(ItemTags.WOODEN_DOORS)) {
                     if (pPlayer.getAirSupply() == pPlayer.getMaxAirSupply()) {
                         break;
                     }
+                    pPlayer.getCooldowns().addCooldown(this, 20);
                     stack.shrink(1);
                     usingDoorStick(pLevel, pPlayer);
                     break;

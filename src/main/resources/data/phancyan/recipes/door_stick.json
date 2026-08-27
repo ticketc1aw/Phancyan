@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     {
       "item": "phancyan:idea"
@@ -9,7 +8,7 @@
       "tag": "minecraft:wooden_doors"
     },
     {
-      "item": "minecraft:torch"
+      "item": "minecraft:stick"
     }
   ],
   "result": {
