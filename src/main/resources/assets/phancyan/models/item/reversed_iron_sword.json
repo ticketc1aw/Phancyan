@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "phancyan:item/reversed_iron_sword"
+  }
+}

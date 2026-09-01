@@ -26,6 +26,8 @@ public class ModItems {
             () -> new OminousStewItem(new Item.Properties()));
     public static final RegistryObject<Item> BOAT_PACKER_3000 = ITEMS.register("boat_packer_3000",
             () -> new BoatPackerItem(new Item.Properties()));
+    public static final RegistryObject<Item> REVERSED_IRON_SWORD = ITEMS.register("reversed_iron_sword",
+            () -> new ReversedIronSwordItem(new Item.Properties()));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
