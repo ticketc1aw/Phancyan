@@ -1,10 +1,7 @@
 package io.github.ticketc1aw.phancyan.common.item;
 
 import io.github.ticketc1aw.phancyan.Phancyan;
-import io.github.ticketc1aw.phancyan.common.item.custom.DisposableTorchItem;
-import io.github.ticketc1aw.phancyan.common.item.custom.DoorStickItem;
-import io.github.ticketc1aw.phancyan.common.item.custom.LunacyItem;
-import io.github.ticketc1aw.phancyan.common.item.custom.OminousStewItem;
+import io.github.ticketc1aw.phancyan.common.item.custom.*;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -27,6 +24,8 @@ public class ModItems {
             () -> new DisposableTorchItem(new Item.Properties()));
     public static final RegistryObject<Item> OMINOUS_STEW = ITEMS.register("ominous_stew",
             () -> new OminousStewItem(new Item.Properties()));
+    public static final RegistryObject<Item> BOAT_PACKER_3000 = ITEMS.register("boat_packer_3000",
+            () -> new BoatPackerItem(new Item.Properties()));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);

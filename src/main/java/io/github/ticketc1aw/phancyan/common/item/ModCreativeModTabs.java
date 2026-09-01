@@ -24,6 +24,7 @@ public class ModCreativeModTabs {
                 output.accept(ModItems.DOOR_STICK.get());
                 output.accept(ModItems.DISPOSABLE_TORCH.get());
                 output.accept(ModItems.OMINOUS_STEW.get());
+                output.accept(ModItems.BOAT_PACKER_3000.get());
 
                 output.accept(ModBlocks.LUNACY_FLOWER.get());
             })
