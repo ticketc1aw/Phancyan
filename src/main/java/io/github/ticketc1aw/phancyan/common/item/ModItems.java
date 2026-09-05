@@ -28,6 +28,8 @@ public class ModItems {
             () -> new BoatPackerItem(new Item.Properties()));
     public static final RegistryObject<Item> REVERSED_IRON_SWORD = ITEMS.register("reversed_iron_sword",
             () -> new ReversedIronSwordItem(new Item.Properties()));
+    public static final RegistryObject<Item> STARGAZER_LANTERN = ITEMS.register("stargazer_lantern",
+            () -> new StargazerLanternItem(new Item.Properties()));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);

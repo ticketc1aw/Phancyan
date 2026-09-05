@@ -1,7 +1,6 @@
 package io.github.ticketc1aw.phancyan.common.item.custom;
 
 import io.github.ticketc1aw.phancyan.common.item.IPhancyanItem;
-import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -30,9 +29,10 @@ public class ReversedIronSwordItem extends SwordItem implements IPhancyanItem {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
         if (!(pLevel.isClientSide)) {
-            pPlayer.hurt(pPlayer.damageSources().playerAttack(pPlayer), 1);
-            pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer, player ->
-                    player.broadcastBreakEvent(pUsedHand));
+            if(pPlayer.hurt(pPlayer.damageSources().playerAttack(pPlayer), 1)) {
+                pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer, player ->
+                        player.broadcastBreakEvent(pUsedHand));
+            }
         }
         return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
     }
