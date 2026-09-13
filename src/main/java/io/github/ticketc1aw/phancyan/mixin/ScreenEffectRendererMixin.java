@@ -15,10 +15,10 @@ import java.util.Objects;
 @Mixin(ScreenEffectRenderer.class)
 public class ScreenEffectRendererMixin {
     @Inject(at = @At("HEAD"), method = "renderScreenEffect", cancellable = true)
-    private static void renderScreenEffect(Minecraft pMinecraft, PoseStack pPoseStack, CallbackInfo ci) {
+    private static void renderScreenEffect(Minecraft pMinecraft, PoseStack pPoseStack, CallbackInfo cir) {
         Player player = pMinecraft.player;
         if (Objects.requireNonNull(player).hasEffect(ModEffects.PHANTOM_PHASE_EFFECT.get())) {
-            ci.cancel();
+            cir.cancel();
         }
     }
 

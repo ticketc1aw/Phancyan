@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:spyglass"
+    },
+    "L": {
+      "item": "phancyan:lunacy"
+    },
+    "l": {
+      "item": "minecraft:lantern"
+    }
+  },
+  "pattern": [
+    "S",
+    "L",
+    "l"
+  ],
+  "result": {
+    "id": "phancyan:stargazer_lantern"
+  }
+}

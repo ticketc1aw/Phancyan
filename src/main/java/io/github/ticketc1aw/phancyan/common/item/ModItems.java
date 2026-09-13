@@ -30,6 +30,10 @@ public class ModItems {
             () -> new ReversedIronSwordItem(new Item.Properties()));
     public static final RegistryObject<Item> STARGAZER_LANTERN = ITEMS.register("stargazer_lantern",
             () -> new StargazerLanternItem(new Item.Properties()));
+    public static final RegistryObject<Item> BALANCING_TOY = ITEMS.register("balancing_toy",
+            () -> new BalancingToyItem(new Item.Properties()));
+    public static final RegistryObject<Item> THE_EYE = ITEMS.register("the_eye",
+            () -> new TheEyeItem(new Item.Properties()));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);

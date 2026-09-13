@@ -27,6 +27,7 @@ public class ModCreativeModTabs {
                 output.accept(ModItems.BOAT_PACKER_3000.get());
                 output.accept(ModItems.REVERSED_IRON_SWORD.get());
                 output.accept(ModItems.STARGAZER_LANTERN.get());
+                output.accept(ModItems.BALANCING_TOY.get());
 
                 output.accept(ModBlocks.LUNACY_FLOWER.get());
             })

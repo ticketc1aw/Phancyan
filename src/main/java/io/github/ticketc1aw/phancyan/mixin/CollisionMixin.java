@@ -2,20 +2,14 @@ package io.github.ticketc1aw.phancyan.mixin;
 
 import io.github.ticketc1aw.phancyan.common.effect.ModEffects;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -25,7 +19,7 @@ public class CollisionMixin {
 
     @Inject(at = @At("HEAD"), method = "getCollisionShape(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;", cancellable = true)
     public void getCollisionShape(BlockGetter p_60743_, BlockPos p_60744_, CollisionContext p_60745_,
-                                  CallbackInfoReturnable<VoxelShape> callback) {
+                                  CallbackInfoReturnable<VoxelShape> cir) {
 
         if (!(p_60745_ instanceof EntityCollisionContext)) {
             return;
@@ -37,13 +31,13 @@ public class CollisionMixin {
             return;
         }
 
-        callback.setReturnValue(Shapes.empty());
-        callback.cancel();
+        cir.setReturnValue(Shapes.empty());
+        cir.cancel();
     }
 
     @Inject(at = @At("HEAD"), method = "getVisualShape(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;", cancellable = true)
     public void getVisualShape(BlockGetter p_60743_, BlockPos p_60744_, CollisionContext p_60745_,
-                               CallbackInfoReturnable<VoxelShape> callback) {
+                               CallbackInfoReturnable<VoxelShape> cir) {
 
         if (!(((EntityCollisionContext) p_60745_).getEntity() instanceof LivingEntity)) {
             return;
@@ -52,13 +46,7 @@ public class CollisionMixin {
             return;
         }
 
-        callback.setReturnValue(Shapes.empty());
-        callback.cancel();
+        cir.setReturnValue(Shapes.empty());
+        cir.cancel();
     }
-
-    @Shadow
-    protected BlockState asState() {
-        throw new IllegalStateException("Mixin failed to shadow asState()");
-    }
-
 }

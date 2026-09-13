@@ -6,7 +6,8 @@
   "refmap": "phancyan.refmap.json",
   "mixins": [
     "CollisionMixin",
-    "ScreenEffectRendererMixin"
+    "ScreenEffectRendererMixin",
+    "PlayerMixin"
   ],
   "client": [
   ],
