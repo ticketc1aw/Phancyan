@@ -28,6 +28,8 @@ public class ModCreativeModTabs {
                 output.accept(ModItems.REVERSED_IRON_SWORD.get());
                 output.accept(ModItems.STARGAZER_LANTERN.get());
                 output.accept(ModItems.BALANCING_TOY.get());
+                output.accept(ModItems.THE_EYE.get());
+                output.accept(ModItems.THE_COIN_REPLICA.get());
 
                 output.accept(ModBlocks.LUNACY_FLOWER.get());
             })

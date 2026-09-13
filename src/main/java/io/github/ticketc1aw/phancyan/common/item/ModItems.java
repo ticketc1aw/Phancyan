@@ -34,6 +34,8 @@ public class ModItems {
             () -> new BalancingToyItem(new Item.Properties()));
     public static final RegistryObject<Item> THE_EYE = ITEMS.register("the_eye",
             () -> new TheEyeItem(new Item.Properties()));
+    public static final RegistryObject<Item> THE_COIN_REPLICA = ITEMS.register("the_coin_replica",
+            () -> new TheCoinReplicaItem(new Item.Properties()));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
