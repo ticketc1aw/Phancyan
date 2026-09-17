@@ -8,8 +8,46 @@
   "item.phancyan.boat_packer_3000": "Boat Packer 3000",
   "item.phancyan.reversed_iron_sword": "Reversed Iron Sword",
   "item.phancyan.stargazer_lantern": "Stargazer's Lantern",
+  "item.phancyan.balancing_toy": "Balancing Toy",
+  "item.phancyan.the_eye": "The Eye",
+  "item.phancyan.the_coin_replica": "The Coin - Replica",
 
   "block.phancyan.lunacy_flower": "Flower of Lunacy",
 
-  "creativetab.phancyan_tab": "Phancyan"
+  "creativetab.phancyan_tab": "Phancyan",
+
+  "tooltip.phancyan.shift": "§bShift§rで説明を表示",
+  "tooltip.phancyan.alt": "§cAlt§rで入手方法を表示",
+  "tooltip.phancyan.alt.crafting": "クラフトにより入手",
+
+  "tooltip.phancyan.idea.alt.1": "任意の進捗を達成時に入手",
+  "tooltip.phancyan.idea.alt.2": "目標や挑戦ではより多く入手",
+  "tooltip.phancyan.lunacy.alt.1": "真上に来た月を望遠鏡で観察すると入手",
+  "tooltip.phancyan.empty_ingot.alt.1": "落ちているネザライトインゴットにハサミを使用して入手",
+  "tooltip.phancyan.door_stick.shift.1": "インベントリ内のドアを消費して呼吸ゲージを回復する",
+  "tooltip.phancyan.disposable_torch.shift.1": "殴ることで相手を燃やす",
+  "tooltip.phancyan.disposable_torch.shift.2": "右クリックで着火する",
+  "tooltip.phancyan.ominous_stew.shift.1": "飲むと§4§k空想片と空想§r§4の境界が曖昧になり、§r",
+  "tooltip.phancyan.ominous_stew.shift.2": "§4§k此処は現実ではない§r",
+  "tooltip.phancyan.ominous_stew.shift.3": "§4§kまだ夢を見ているのですか？§r",
+  "tooltip.phancyan.ominous_stew.shift.4": "§4§k迷子の欠片§r§4が地面へと透けていく。§r",
+  "tooltip.phancyan.ominous_stew.shift.5": "§4§kW A K E U P§r",
+  "tooltip.phancyan.ominous_stew.shift.6": "§4§k心地よいプール。美学の象徴。§r",
+  "tooltip.phancyan.ominous_stew.shift.7": "§4§k私と共に楽園へ行きましょう§r",
+  "tooltip.phancyan.ominous_stew.shift.8": "§4§k孤独§r§4になりたくないなら、飲むべきではない§r",
+  "tooltip.phancyan.boat_packer_3000.shift.1": "右クリックでエンティティを引き寄せる",
+  "tooltip.phancyan.boat_packer_3000.shift.2": "インベントリ内のボートを消費し、近くのエンティティをボートに乗せる",
+  "tooltip.phancyan.reversed_iron_sword.shift.1": "殴ることで1ダメージを受ける",
+  "tooltip.phancyan.reversed_iron_sword.shift.2": "右クリックでも1ダメージを受ける",
+  "tooltip.phancyan.stargazer_lantern.shift.1": "左手に持ったコンパスの指針の先へ移動することができる",
+  "tooltip.phancyan.stargazer_lantern.shift.2": "右手にランタンを持って長押しする",
+  "tooltip.phancyan.stargazer_lantern.shift.3": "夜の間のみ使用可能であり、移動中に日が明ける場合は移動できない",
+  "tooltip.phancyan.balancing_toy.shift.1": "左手に持っている間、スニーク状態のようにブロックから落ちなくなる",
+  "tooltip.phancyan.the_eye.shift.1": "インベントリに保持している間、無知になっていく",
+  "tooltip.phancyan.the_eye.shift.2": "全てを忘れると、一部の経験を失い帰る",
+  "tooltip.phancyan.the_coin_replica.shift.1": "左手に持っている時、次のダメージを§6sqrt(痛み)§r",
+  "tooltip.phancyan.the_coin_replica.shift.2": "使用後消滅する",
+
+  "tooltip.phancyan.lunacy_flower.alt.1": "任意の花に狂気を捧げることで変化"
+
 }

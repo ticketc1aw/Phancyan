@@ -2,18 +2,26 @@ package io.github.ticketc1aw.phancyan.common.item.custom;
 
 import io.github.ticketc1aw.phancyan.common.block.ModBlocks;
 import io.github.ticketc1aw.phancyan.common.item.IPhancyanItem;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class LunacyItem extends Item implements IPhancyanItem {
     public LunacyItem(Properties pProperties) {
@@ -21,8 +29,14 @@ public class LunacyItem extends Item implements IPhancyanItem {
     }
 
     @Override
-    public int getPhase() {
-        return 2;
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.translatable("tooltip.phancyan.shift").withStyle(ChatFormatting.DARK_GRAY));
+        if (Screen.hasShiftDown()) {
+        }
+        pTooltipComponents.add(Component.translatable("tooltip.phancyan.alt").withStyle(ChatFormatting.DARK_GRAY));
+        if (Screen.hasAltDown()) {
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.lunacy.alt.1"));
+        }
     }
 
     @Override
@@ -42,5 +56,10 @@ public class LunacyItem extends Item implements IPhancyanItem {
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
         return InteractionResult.PASS;
+    }
+
+    @Override
+    public int getPhase() {
+        return 2;
     }
 }

@@ -1,6 +1,9 @@
 package io.github.ticketc1aw.phancyan.common.item.custom;
 
 import io.github.ticketc1aw.phancyan.common.item.IPhancyanItem;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
@@ -11,10 +14,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -23,6 +28,20 @@ import java.util.List;
 public class BoatPackerItem extends Item implements IPhancyanItem {
     public BoatPackerItem(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.translatable("tooltip.phancyan.shift").withStyle(ChatFormatting.DARK_GRAY));
+        if (Screen.hasShiftDown()) {
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.boat_packer_3000.shift.1"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.boat_packer_3000.shift.2"));
+        }
+        pTooltipComponents.add(Component.translatable("tooltip.phancyan.alt").withStyle(ChatFormatting.DARK_GRAY));
+        if (Screen.hasAltDown()) {
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.alt.crafting"));
+        }
+
     }
 
     @Override

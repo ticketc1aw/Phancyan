@@ -2,6 +2,9 @@ package io.github.ticketc1aw.phancyan.common.item.custom;
 
 import io.github.ticketc1aw.phancyan.common.effect.ModEffects;
 import io.github.ticketc1aw.phancyan.common.item.IPhancyanItem;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -9,16 +12,35 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class OminousStewItem extends Item implements IPhancyanItem {
     public OminousStewItem(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.translatable("tooltip.phancyan.shift").withStyle(ChatFormatting.DARK_GRAY));
+        if (Screen.hasShiftDown()) {
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.ominous_stew.shift.1"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.ominous_stew.shift.2"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.ominous_stew.shift.3"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.ominous_stew.shift.4"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.ominous_stew.shift.5"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.ominous_stew.shift.6"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.ominous_stew.shift.7"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.ominous_stew.shift.8"));
+        }
+        pTooltipComponents.add(Component.translatable("tooltip.phancyan.alt").withStyle(ChatFormatting.DARK_GRAY));
+        if (Screen.hasAltDown()) {
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.alt.crafting"));
+        }
     }
 
     @Override

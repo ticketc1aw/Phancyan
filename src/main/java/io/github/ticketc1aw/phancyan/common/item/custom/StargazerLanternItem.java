@@ -1,6 +1,8 @@
 package io.github.ticketc1aw.phancyan.common.item.custom;
 
 import io.github.ticketc1aw.phancyan.common.item.IPhancyanItem;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.core.registries.Registries;
@@ -21,15 +23,32 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
 public class StargazerLanternItem extends Item implements IPhancyanItem {
     public StargazerLanternItem(Item.Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.translatable("tooltip.phancyan.shift").withStyle(ChatFormatting.DARK_GRAY));
+        if (Screen.hasShiftDown()) {
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.stargazer_lantern.shift.1"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.stargazer_lantern.shift.2"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.stargazer_lantern.shift.3"));
+        }
+        pTooltipComponents.add(Component.translatable("tooltip.phancyan.alt").withStyle(ChatFormatting.DARK_GRAY));
+        if (Screen.hasAltDown()) {
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.alt.crafting"));
+        }
     }
 
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, Player pPlayer, @NotNull InteractionHand pUsedHand) {

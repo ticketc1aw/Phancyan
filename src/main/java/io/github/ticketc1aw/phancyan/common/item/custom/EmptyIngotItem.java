@@ -13,27 +13,20 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class TheCoinReplicaItem extends Item implements IPhancyanItem {
-    public TheCoinReplicaItem(Properties properties) {
+public class EmptyIngotItem extends Item implements IPhancyanItem {
+    public EmptyIngotItem(Properties properties) {
         super(properties);
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("tooltip.phancyan.shift").withStyle(ChatFormatting.DARK_GRAY));
         if (Screen.hasShiftDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.phancyan.the_coin_replica.shift.1"));
-            pTooltipComponents.add(Component.translatable("tooltip.phancyan.the_coin_replica.shift.2"));
         }
         pTooltipComponents.add(Component.translatable("tooltip.phancyan.alt").withStyle(ChatFormatting.DARK_GRAY));
         if (Screen.hasAltDown()) {
-            pTooltipComponents.add(Component.translatable("tooltip.phancyan.alt.crafting"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.empty_ingot.alt.1"));
         }
-    }
-
-    @Override
-    public int getMaxStackSize(ItemStack stack) {
-        return 8;
     }
 
     @Override

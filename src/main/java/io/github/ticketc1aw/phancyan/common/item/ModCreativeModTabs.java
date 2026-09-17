@@ -31,7 +31,7 @@ public class ModCreativeModTabs {
                 output.accept(ModItems.THE_EYE.get());
                 output.accept(ModItems.THE_COIN_REPLICA.get());
 
-                output.accept(ModBlocks.LUNACY_FLOWER.get());
+                output.accept(ModBlocks.LUNACY_FLOWER_ITEM.get());
             })
             .build());
 

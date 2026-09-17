@@ -1,15 +1,22 @@
 package io.github.ticketc1aw.phancyan.common.item.custom;
 
 import io.github.ticketc1aw.phancyan.common.item.IPhancyanItem;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.FlintAndSteelItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Objects;
 
 public class DisposableTorchItem extends FlintAndSteelItem implements IPhancyanItem {
@@ -18,8 +25,16 @@ public class DisposableTorchItem extends FlintAndSteelItem implements IPhancyanI
     }
 
     @Override
-    public int getPhase() {
-        return 1;
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.translatable("tooltip.phancyan.shift").withStyle(ChatFormatting.DARK_GRAY));
+        if (Screen.hasShiftDown()) {
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.disposable_torch.shift.1"));
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.disposable_torch.shift.2"));
+        }
+        pTooltipComponents.add(Component.translatable("tooltip.phancyan.alt").withStyle(ChatFormatting.DARK_GRAY));
+        if (Screen.hasAltDown()) {
+            pTooltipComponents.add(Component.translatable("tooltip.phancyan.alt.crafting"));
+        }
     }
 
     @Override
@@ -42,5 +57,10 @@ public class DisposableTorchItem extends FlintAndSteelItem implements IPhancyanI
         } else  {
             return super.useOn(pContext);
         }
+    }
+
+    @Override
+    public int getPhase() {
+        return 1;
     }
 }
